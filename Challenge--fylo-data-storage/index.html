@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html{
+      font-size: 62.5%;
+      background: url(./images/bg-desktop.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-color: hsl(229, 57%, 11%);
+      height: 100vh;
+      background-size: 100% 50%;
+    }
+    body{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+    main{
+      height: 100vh;
+    }
+    .container{
+      margin-top: 5rem;
+      height: 100%;
+      width: 65%;
+      margin: 0 auto;
+      /* margin-top: 4rem; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .left{
+      border-radius: 1rem 8rem 1rem 1rem;
+      margin-top: 5rem;
+      position: relative;
+      margin-right: 4rem;
+      height: 15rem;
+      bottom: 2.5rem;
+      width: 35%;
+      background-color: hsl(228, 56%, 26%);
+      padding: 3rem;
+    }
+    .left__logo img{ 
+      width: 10rem;
+    }
+    .left__icon-images{
+      display: flex;
+      margin-top: 3rem;
+      align-items: center;
+    }
+    .left__icon-images figure{
+      display: flex;
+      background-color: hsl(229, 57%, 11%);
+      width: 3rem;
+      height: 3rem;
+      border-radius: .5rem;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.3rem;
+    }
+    .left__icon-images figure:nth-of-type(1) img{
+      width: 1.3rem;
+    }
+    .left__icon-images figure:nth-of-type(2) img{
+      width: 1.5rem;
+    }
+    .left__icon-images figure:nth-of-type(3) img{
+      width: 1.7rem;
+    }
+    .right{
+      border-radius: 1rem;
+      margin-top: 5rem;
+      width: 55%;
+      background-color: hsl(228, 56%, 26%);
+      color: white;
+      height: 10rem;
+      position: relative;
+      padding: 2.5rem 3rem;
+    }
+    .right__cloud{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      border-radius: 1rem;
+      top: -3rem;
+      margin-right: 3rem;
+      height: 5rem;
+      color: black;
+      width: 12rem;
+      background-color: white;
+    }
+    .right__cloud span:nth-of-type(1){
+      font-weight: 700;
+      font-size: 2.1rem;
+    }
+    .right__cloud span:nth-of-type(2){
+      font-weight: 700;
+      font-size: 1rem;
+      color: gray;
+    }
+    .right__cloud::after{
+      content:"";
+      position: absolute;
+      bottom: 0;
+      position: absolute;
+      border-style: solid;
+      border-width: 2rem 0 0 1.5rem;
+      border-color: white transparent transparent transparent;
+      right: -3.3px;
+      transform: translateX(-25%) translateY(60%);     
+    }
+    .right__text{
+      color: white;
+      
+    }
+    .right__bar-container{
+      width: 100%;
+      margin: 1rem 0;
+      height: 1rem;
+      background-color: hsl(229, 57%, 11%);
+      border-radius: 1rem;
+    }
+    .bar-container__color{
+      width: 75%;
+      background: linear-gradient(90deg, rgba(255,163,153,1) 0%, rgba(255, 77,151,1) 100%);
+      margin-left: .1rem;
+      border-radius: 1rem;
+      color: hsl(335, 100%, 65%);
+      height: .8rem;
+      top: .1rem;
+      position: relative;
+    }
+    .bar-container__color--circle{
+      height: .6rem;
+      width: .6rem;
+      margin: .1rem;
+      border-radius:100%;
+      background-color: white;
+      position: absolute;
+      right: 0;
+    }
+    .right__GB{
+      display: flex;
+      justify-content: space-between;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @media screen and (max-width: 767px){
+      .container{
+        width: 100vw;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .left{
+        margin-left: 1rem;
+        min-width: 114px;
+        padding: 3rem 0 0 1.5rem;
+      }
+      .right{
+        margin-right: 1rem;
+        min-width: 214px;
+      }
+    }
+    @media screen and (max-width: 425px){
+      
+    html{
+      background: url(./images/bg-mobile.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+      .container{
+        flex-wrap: wrap;
+        /* flex-wrap: ; */
+        align-content: center;
+        /* align-items: center; */
+      }
+        .left{
+        margin: initial;
+        /* margin:; */
+        /* max-width: 350px; */
+        /* min-width: 280px; */
+        width: 70%;
+        /* margin: 0 2rem; */
+        padding: 3rem 0 0 3rem;
+      }
+      .right{
+        margin: initial;
+        width: 70%;
+        min-width: initial;
+        height: 12rem;
+      }
+      .right__cloud{
+        margin: 0 auto;
+        left: 0;
+        top: initial;
+        bottom: -2.5rem;
+      }
+      .right__cloud::after{
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="left">
+        <figure class="left__logo">
+          <img src="./images/logo.svg" alt="">
+        </figure>
+        <div class="left__icon-images">
+          <figure>
+            <img src="./images/icon-document.svg" alt="">
+          </figure>
+          <figure>
+            <img src="./images/icon-folder.svg" alt="">
+          </figure>
+          <figure>
+            <img src="./images/icon-upload.svg" alt="">
+          </figure>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right__cloud">
+          <span>185&nbsp</span>
+          <span> GB Left</span>
+        </div>
+        <p class="right__text">You’ve used<strong> 815 GB</strong> of your storage</p>      
+        <div class="right__bar-container">
+          <div class="bar-container__color">
+            <div class="bar-container__color--circle"></div>
+          </div>
+        </div>
+        <div class="right__GB">
+          <span>0 GB</span>
+          <span>1000 GB</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
