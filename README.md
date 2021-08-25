@@ -1,5 +1,4 @@
 # Frontend-Mentor
-###Tables
                     
 Challenge | Vista del sitio
 ------------- | -------------
